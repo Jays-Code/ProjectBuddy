@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+//import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import StartedProjectsComp from './components/StartedProjectsComp'
+import StartedProjComp from './components/StartedProjComp'
+import ProjectsToStartComp from './components/ProjectsToStartComp'
+import ProjToStartComp from './components/ProjToStartComp'
+import Homepage from './components/Homepage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className='App'>
+          <Switch>
+            <Route exact path='/' component={Homepage} />
+            <Route path='startedProjects' component={StartedProjectsComp} />
+            <Route path='startedProjects/:projId' component={StartedProjComp} />
+            <Route path='projectsToStart' component={ProjectsToStartComp} />
+            <Route path='projectsToStart/:projId' component={ProjToStartComp} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
+
