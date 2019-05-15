@@ -3,9 +3,9 @@ const mongoose = require('../connection')
 const Schema = mongoose.Schema
 
 const ProjectsToStart = new Schema ({
-    Name: String,
-    Priority: Number,
-    Info: String
+    name: String,
+    priority: Number,
+    info: String
 })
 
 module.exports = mongoose.model('ProjectsToStart', ProjectsToStart)
