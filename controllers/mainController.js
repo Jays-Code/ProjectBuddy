@@ -16,6 +16,12 @@ const mainController = {
         StartedProjects.find().then(showStartedProjects => {
             res.send(showStartedProjects)
         })
+    },
+    
+    projectsToStartIndex: function (req, res) {
+        ProjectsToStart.find().then(showProjectsToStart => {
+            res.send(showProjectsToStart)
+        })
     }
 }
 

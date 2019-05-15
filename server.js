@@ -11,7 +11,7 @@ app.use(express.json());
 
 //ROUTES
 
-const mainController = require('./controllers/controller')
+const mainController = require('./controllers/mainController')
 
 
 
@@ -26,9 +26,7 @@ app.get('/api/startedProjects/:projId', (req, res) => {
     res.send('Single Started Product component page')
 })
 
-app.get('/api/projectsToStart', (req, res) => {
-    res.send('Projects to Start component page')
-})
+app.get('/api/projectsToStart', mainController.projectsToStartIndex);
 
 app.get('/api/projectsToStart/:projId', (req, res) => {
     res.send('Project to Start component page')

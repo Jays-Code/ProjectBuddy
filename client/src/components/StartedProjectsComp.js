@@ -5,8 +5,8 @@ class StartedProjectsComp extends Component {
     render() {
         return (
             <div>
-                <h1>Started Projects(Why cant my Link show?)</h1>
-                <Link to="/">(this is a test)Go Back to Home</Link>
+                <h1>Started Projects</h1>
+                <Link to="/">Go Back to Home</Link>
             </div>
         )
     }
