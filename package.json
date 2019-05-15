@@ -2,7 +2,7 @@
   "engines": {
     "node": "10.0.0"
   },
-  "name": "ProjectBuddy",
+  "name": "projectbuddy",
   "version": "1.0.0",
   "description": "A project organizer app",
   "main": "server.js",
@@ -16,7 +16,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "dev": "concurrently \"node server.js\" \"cd ./client  && npm start \" ",
     "start": "node server.js",
     "postinstall": "cd client && npm install && npm run build"
   },
