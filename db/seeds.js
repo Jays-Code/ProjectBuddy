@@ -2,7 +2,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 
-const StartedProjects = require('../db/models/StartedProjects')
+const StartedProjects = require('./models/StartedProjects')
 const ProjectsToStart = require('./models/ProjectsToStart')
 
 const firstStartedProject = new StartedProjects({
@@ -19,9 +19,13 @@ const firstProjectToStart = new ProjectsToStart({
 
 
 /* WHAT IS THIS PORTION?
+*/
+
 StartedProjects.remove({})
-  .then(() => firstTestStartedProject.save())
+  .then(() => firstStartedProject.save())
+  .then(()=> firstProjectToStart.save())
   .then(() => console.log('Successful Save'))
   .then(() => mongoose.connection.close())
+  /*
 Now we finally have enough info to build out our API.
 */

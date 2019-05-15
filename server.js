@@ -13,21 +13,24 @@ app.use(express.json());
 
 const mainController = require('./controllers/controller')
 
-app.get('/', (req, res) => {
+
+
+app.get('/api', (req, res) => {
     res.send('Hello world!')
 })
-app.get('/startedProjects', (req, res) => {
-    res.send('Started Projects component page')
-});
-app.get('/startedProjects/:projId', (req, res) => {
+//app.get('/startedProjects', (req, res) => {
+    //res.send('Started Projects component page')
+app.get('/api/startedProjects', mainController.startedProjectsIndex);
+    
+app.get('/api/startedProjects/:projId', (req, res) => {
     res.send('Single Started Product component page')
 })
 
-app.get('/projectsToStart', (req, res) => {
+app.get('/api/projectsToStart', (req, res) => {
     res.send('Projects to Start component page')
 })
 
-app.get('/projectsToStart/:projId', (req, res) => {
+app.get('/api/projectsToStart/:projId', (req, res) => {
     res.send('Project to Start component page')
 })
 
