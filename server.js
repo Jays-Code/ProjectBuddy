@@ -22,15 +22,11 @@ app.get('/api', (req, res) => {
     //res.send('Started Projects component page')
 app.get('/api/startedProjects', mainController.startedProjectsIndex);
     
-app.get('/api/startedProjects/:projId', (req, res) => {
-    res.send('Single Started Product component page')
-})
+app.get('/api/startedProjects/:projId', mainController.startedProject);
 
 app.get('/api/projectsToStart', mainController.projectsToStartIndex);
 
-app.get('/api/projectsToStart/:projId', (req, res) => {
-    res.send('Project to Start component page')
-})
+app.get('/api/projectsToStart/:projId', mainController.projectToStart);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

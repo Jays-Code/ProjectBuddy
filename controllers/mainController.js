@@ -17,12 +17,30 @@ const mainController = {
             res.send(showStartedProjects)
         })
     },
-    
+
     projectsToStartIndex: function (req, res) {
         ProjectsToStart.find().then(showProjectsToStart => {
             res.send(showProjectsToStart)
         })
+    },
+
+    startedProject: function (req, res) {
+        StartedProjects.findById(req.params.projId).then(showStartedProject => {
+            console.log("proj id", req.params.projId)
+            res.send(showStartedProject)
+        })
+    },
+
+    projectToStart: function (req, res) {
+        ProjectsToStart.findById(req.params.projId).then(showProjectToStart => {
+            res.send(showProjectToStart)
+        })
+
     }
+
+
+
+
 }
 
 module.exports = mainController
