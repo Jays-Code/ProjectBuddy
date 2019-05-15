@@ -17,10 +17,10 @@ class App extends Component {
         <div className='App'>
           <Switch>
             <Route exact path='/' component={Homepage} />
-            <Route path='startedProjects' component={StartedProjectsComp} />
-            <Route path='startedProjects/:projId' component={StartedProjComp} />
-            <Route path='projectsToStart' component={ProjectsToStartComp} />
-            <Route path='projectsToStart/:projId' component={ProjToStartComp} />
+            <Route path='/startedProjects' component={StartedProjectsComp} />
+            <Route path='/startedProjects/:projId' component={StartedProjComp} />
+            <Route path='/projectsToStart' component={ProjectsToStartComp} />
+            <Route path='/projectsToStart/:projId' component={ProjToStartComp} />
           </Switch>
         </div>
       </Router>

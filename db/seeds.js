@@ -19,8 +19,8 @@ const firstProjectToStart = new ProjectsToStart({
 
 
 /* WHAT IS THIS PORTION?
-User.remove({})
-  .then(() => elon.save())
+StartedProjects.remove({})
+  .then(() => firstTestStartedProject.save())
   .then(() => console.log('Successful Save'))
   .then(() => mongoose.connection.close())
 Now we finally have enough info to build out our API.

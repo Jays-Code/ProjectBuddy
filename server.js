@@ -9,7 +9,9 @@ app.use(express.json());
     res.sendFile(__dirname + '/client/build/index.html')
 })*/
 
+//ROUTES
 
+const mainController = require('./controllers/controller')
 
 app.get('/', (req, res) => {
     res.send('Hello world!')
@@ -26,7 +28,7 @@ app.get('/projectsToStart', (req, res) => {
 })
 
 app.get('/projectsToStart/:projId', (req, res) => {
-    res.send('Project to Start component page c')
+    res.send('Project to Start component page')
 })
 
 const PORT = process.env.PORT || 3001;
