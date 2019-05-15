@@ -3,17 +3,11 @@ const app = express();
 
 app.use(express.json());
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-    console.log("Got you connected on port" + PORT);
-})
+//app.use(express.static(__dirname + '/client/build/'));
 
-
-app.use(express.static(__dirname + '/client/build/'));
-
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.sendFile(__dirname + '/client/build/index.html')
-})
+})*/
 
 
 
@@ -35,6 +29,10 @@ app.get('/projectsToStart/:projId', (req, res) => {
     res.send('Project to Start component page c')
 })
 
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log("Got you connected on port" + PORT);
+})
 /*
 
 <Route path='projectsToStart/:projId' component={ProjToStartComp} />
