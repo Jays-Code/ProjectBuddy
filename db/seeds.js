@@ -32,8 +32,6 @@ const secondProjectToStart = new ProjectsToStart({
 })
 
 
-/* WHAT IS THIS PORTION?
-*/
 
 StartedProjects.remove({})
     .then(() => firstStartedProject.save())
@@ -42,6 +40,3 @@ StartedProjects.remove({})
     .then(() => secondProjectToStart.save())
     .then(() => console.log('Successful Save'))
     .then(() => mongoose.connection.close())
-  /*
-Now we finally have enough info to build out our API.
-*/
