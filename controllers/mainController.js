@@ -12,15 +12,10 @@ const ProjectsToStart = require("../db/models/ProjectsToStart");
 
 
 const mainController = {
+    //first model (started projects)
     startedProjectsIndex: function (req,res) {
         StartedProjects.find().then(showStartedProjects => {
             res.send(showStartedProjects)
-        })
-    },
-
-    projectsToStartIndex: function (req, res) {
-        ProjectsToStart.find().then(showProjectsToStart => {
-            res.send(showProjectsToStart)
         })
     },
 
@@ -31,12 +26,31 @@ const mainController = {
         })
     },
 
+    //addStartedProject
+    //updateStartedProject
+    //deleteStartedProject
+    
+
+
+
+    //second model (projects to start)
+
+    projectsToStartIndex: function (req, res) {
+        ProjectsToStart.find().then(showProjectsToStart => {
+            res.send(showProjectsToStart)
+        })
+    },
+   
     projectToStart: function (req, res) {
         ProjectsToStart.findById(req.params.projId).then(showProjectToStart => {
             res.send(showProjectToStart)
         })
 
-    }
+    },
+
+    //addProjectToStart
+    //deleteProjectToStart
+
 
 
 
