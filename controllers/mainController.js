@@ -33,13 +33,16 @@ const mainController = {
     
     updateStartedProjectRank: function(req, res) {
         //console.log(req.params.id)
-        StartedProjects.updateOne({_id: req.params.projId}, req.body)
-        //.then(() => {
-           // res.redirect("/startedProjects");
+        StartedProjects.findByIdAndUpdate(req.params.projId, req.body, {new: true})
+        .then(() => {
+           res.send(200);
+        })
     },
     
     deleteStartedProject: function (req, res) {
-        StartedProjects.findByIdAndDelete(req.params.projId)
+        StartedProjects.findByIdAndDelete(req.params.projId).then(()=>{
+            res.send("DONE ")
+        })
     },
     
 
@@ -65,8 +68,12 @@ const mainController = {
         //.then(() => { res.redirect("/") })
     },
 
+
+    // app.delete('/api/projectsToStart/:projId', mainController.deleteProjectToStart)
     deleteProjectToStart: function (req, res) {
-        ProjectsToStart.findByIdAndDelete(req.params.projId)
+        ProjectsToStart.findByIdAndDelete(req.params.projId).then(()=>{
+            res.send("DONE ")
+        })
     }
 
 

@@ -29,7 +29,7 @@ app.delete('/api/startedProjects/:projId', mainController.deleteStartedProject)
 app.get('/api/projectsToStart', mainController.projectsToStartIndex);
 app.get('/api/projectsToStart/:projId', mainController.projectToStart);
 app.post('/api/projectsToStart', mainController.newProjectToStart);
-app.delete('/api/startedProjects/:projId', mainController.deleteProjectToStart)
+app.delete('/api/projectsToStart/:projId', mainController.deleteProjectToStart)
 
 
 
