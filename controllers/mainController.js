@@ -54,18 +54,19 @@ const mainController = {
     },
    
     projectToStart: function (req, res) {
-        ProjectsToStart.findById(req.params.projId).then(showProjectToStart => {
+        ProjectsToStart.findById(req.params.projId,).then(showProjectToStart => {
             res.send(showProjectToStart)
         })
 
     },
 
     newProjectToStart: function (req, res) {
-        projectToStart.create(req.body)
+        ProjectsToStart.create(req.body)
+        //.then(() => { res.redirect("/") })
     },
 
     deleteProjectToStart: function (req, res) {
-        projectToStart.findByIdAndDelete(req.params.projId)
+        ProjectsToStart.findByIdAndDelete(req.params.projId)
     }
 
 
