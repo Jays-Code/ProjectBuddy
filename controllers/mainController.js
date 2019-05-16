@@ -26,9 +26,21 @@ const mainController = {
         })
     },
 
-    //addStartedProject
-    //updateStartedProject
-    //deleteStartedProject
+    newStartedProject: function (req, res) {
+        StartedProjects.create(req.body)
+    },
+
+    
+    updateStartedProjectRank: function(req, res) {
+        //console.log(req.params.id)
+        StartedProjects.updateOne({_id: req.params.projId}, req.body)
+        //.then(() => {
+           // res.redirect("/startedProjects");
+    },
+    
+    deleteStartedProject: function (req, res) {
+        StartedProjects.findByIdAndDelete(req.params.projId)
+    },
     
 
 
@@ -48,8 +60,13 @@ const mainController = {
 
     },
 
-    //addProjectToStart
-    //deleteProjectToStart
+    newProjectToStart: function (req, res) {
+        projectToStart.create(req.body)
+    },
+
+    deleteProjectToStart: function (req, res) {
+        projectToStart.findByIdAndDelete(req.params.projId)
+    }
 
 
 

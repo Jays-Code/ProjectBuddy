@@ -22,13 +22,13 @@ app.get('/api', (req, res) => {
     //res.send('Started Projects component page')
 app.get('/api/startedProjects', mainController.startedProjectsIndex);
 app.get('/api/startedProjects/:projId', mainController.startedProject);
-app.post('/api/startedProjects', mainController.createStartedProject);
-app.put('/api/startedProjects/:projId', mainController.updateStartedProject)
+app.post('/api/startedProjects', mainController.newStartedProject);
+app.put('/api/startedProjects/:projId', mainController.updateStartedProjectRank)
 app.delete('/api/startedProjects/:projId', mainController.deleteStartedProject)
 
 app.get('/api/projectsToStart', mainController.projectsToStartIndex);
 app.get('/api/projectsToStart/:projId', mainController.projectToStart);
-app.post('/api/projectsToStart', mainController.createProjectToStart);
+app.post('/api/projectsToStart', mainController.newProjectToStart);
 app.delete('/api/startedProjects/:projId', mainController.deleteProjectToStart)
 
 
