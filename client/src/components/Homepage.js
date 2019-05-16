@@ -17,8 +17,8 @@ class Homepage extends Component {
         return (
             <div>
                 <h1>Welcome to ProjectBuddy!</h1>
-                <Link to="/StartedProjectsComp">Started Projects</Link>
-                <Link to="/ProjectsToStartComp">Projects To Start</Link>
+                <Link to="/StartedProjects">Started Projects</Link>
+                <Link to="/ProjectsToStart">Projects To Start</Link>
             </div>
                 )
             }
