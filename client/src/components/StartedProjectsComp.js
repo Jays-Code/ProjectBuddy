@@ -30,7 +30,7 @@ class StartedProjectsComp extends Component {
         axios.post('/api/startedProjects', {
             name: this.state.newStartedProject.name,
             rank: this.state.newStartedProject.rank,
-            info: this.state.newCreature.info
+            info: this.state.newStartedProject.info
         })
             .then(res => {
                 const startedProjectsList = [...this.state.startedProjects]
@@ -54,6 +54,15 @@ class StartedProjectsComp extends Component {
         return (
             <div>
                 <h1>Started Projects</h1>
+                {
+    this.state.startedProjects.map(startedProject => {
+        return (
+            <div key={startedProject.projId}>
+                <Link to={`/${startedProject.projId}`}>{startedProject.name}</Link>
+            </div>
+        )
+    })
+}
                 <Link to="/">Go Back to Home</Link>
                 <form onSubmit={this.createStartedProject}>
     <div>
@@ -69,9 +78,9 @@ class StartedProjectsComp extends Component {
     <div>
         <label htmlFor="rank">Rank</label>
         <textarea
-            id="description"
+            id="rank"
             type="number"
-            name="description"
+            name="rank"
             onChange={this.handleChange}
             value={this.state.newStartedProject.rank}
         />
@@ -80,10 +89,10 @@ class StartedProjectsComp extends Component {
         <label htmlFor="rank">Info</label>
         <textarea
             id="info"
-            type="number"
+            type="text"
             name="info"
             onChange={this.handleChange}
-            value={this.state.newStartedProject.rank}
+            value={this.state.newStartedProject.info}
         />
     </div>
     <button>Add a previously started project</button>
@@ -96,6 +105,7 @@ class StartedProjectsComp extends Component {
 export default StartedProjectsComp
 
 ////////////
+/*
 {
     this.state.startedProjects.map(startedProject => {
         return (
@@ -106,4 +116,4 @@ export default StartedProjectsComp
     })
 }
 
-  
+  */
