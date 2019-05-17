@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect, Link } from 'react-router-dom'
+import axios from 'axios'
 
 class StartedProjComp extends Component {
     render() {
@@ -8,6 +10,14 @@ class StartedProjComp extends Component {
             </div>
         )
     }
+
+    componentDidMount = () => {
+        axios.get(`/api/StartedProjects/${this.props.match.params.projId}`).then(res => {
+            this.setState({startedProject: res.data})
+        })
+    }
+
+
 }
 
 export default StartedProjComp

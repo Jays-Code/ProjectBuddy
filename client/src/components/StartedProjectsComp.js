@@ -13,11 +13,13 @@ class StartedProjectsComp extends Component {
             description: ''
         }
     }
-
+getAllStartedProjects=()=>{
+    axios.get('api/startedProjects').then(res => {
+        this.setState({ startedProjects: res.data })
+    })
+}
     componentDidMount = () => {
-        axios.get('api/startedProjects').then(res => {
-            this.setState({ startedProjects: res.data })
-        })
+     this.getAllStartedProjects()
     }
 
     handleChange = (e) => {
@@ -47,7 +49,9 @@ class StartedProjectsComp extends Component {
         
           
     })
-    this.props.history.push('/')}
+    // this.props.history.push('/startedProjects')
+    this.getAllStartedProjects()
+}
     
 
     //<form onSubmit = {this.createStartedProject}></form>
@@ -61,8 +65,8 @@ class StartedProjectsComp extends Component {
                 {
                     this.state.startedProjects.map(startedProject => {
                         return (
-                            <div key={startedProject.projId}>
-                                <Link to={`/${startedProject.projId}`}>{startedProject.name}</Link>
+                            <div key={startedProject._id}>
+                                <Link to={`/startedProjects/${startedProject._id}`}>{startedProject.name}</Link>
                             </div>
                         )
                     })
