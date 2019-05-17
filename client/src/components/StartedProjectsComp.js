@@ -10,7 +10,7 @@ class StartedProjectsComp extends Component {
         newStartedProject: {
             name: '',
             rank: '',
-            description: ''
+            info: ''
         }
     }
 getAllStartedProjects=()=>{
