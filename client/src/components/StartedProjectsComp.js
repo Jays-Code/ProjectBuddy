@@ -6,6 +6,7 @@ class StartedProjectsComp extends Component {
 
     state = {
         startedProjects: [],
+
         newStartedProject: {
             name: '',
             rank: '',
@@ -43,9 +44,11 @@ class StartedProjectsComp extends Component {
                     },
                     startedProjects: startedProjectsList
                 })
-            })
-    }
-
+        
+          
+    })
+    this.props.history.push('/')}
+    
 
     //<form onSubmit = {this.createStartedProject}></form>
 
@@ -54,49 +57,50 @@ class StartedProjectsComp extends Component {
         return (
             <div>
                 <h1>Started Projects</h1>
+                
                 {
-    this.state.startedProjects.map(startedProject => {
-        return (
-            <div key={startedProject.projId}>
-                <Link to={`/${startedProject.projId}`}>{startedProject.name}</Link>
-            </div>
-        )
-    })
-}
+                    this.state.startedProjects.map(startedProject => {
+                        return (
+                            <div key={startedProject.projId}>
+                                <Link to={`/${startedProject.projId}`}>{startedProject.name}</Link>
+                            </div>
+                        )
+                    })
+                }
                 <Link to="/">Go Back to Home</Link>
                 <form onSubmit={this.createStartedProject}>
-    <div>
-        <label htmlFor="name">Name</label>
-        <input
-            id="name"
-            type="text"
-            name="name"
-            onChange={this.handleChange}
-            value={this.state.newStartedProject.name}
-        />
-    </div>
-    <div>
-        <label htmlFor="rank">Rank</label>
-        <textarea
-            id="rank"
-            type="number"
-            name="rank"
-            onChange={this.handleChange}
-            value={this.state.newStartedProject.rank}
-        />
-    </div>
-    <div>
-        <label htmlFor="rank">Info</label>
-        <textarea
-            id="info"
-            type="text"
-            name="info"
-            onChange={this.handleChange}
-            value={this.state.newStartedProject.info}
-        />
-    </div>
-    <button>Add a previously started project</button>
-</form>
+                    <div>
+                        <label htmlFor="name">Name</label>
+                        <input
+                            id="name"
+                            type="text"
+                            name="name"
+                            onChange={this.handleChange}
+                            value={this.state.newStartedProject.name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="rank">Rank</label>
+                        <textarea
+                            id="rank"
+                            type="number"
+                            name="rank"
+                            onChange={this.handleChange}
+                            value={this.state.newStartedProject.rank}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="rank">Info</label>
+                        <textarea
+                            id="info"
+                            type="text"
+                            name="info"
+                            onChange={this.handleChange}
+                            value={this.state.newStartedProject.info}
+                        />
+                    </div>
+                    <button>Add a previously started project</button>
+                </form>
             </div>
         )
     }
