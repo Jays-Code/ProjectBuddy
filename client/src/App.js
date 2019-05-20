@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import StartedProjectsComp from './components/StartedProjectsComp'
 import StartedProjComp from './components/StartedProjComp'

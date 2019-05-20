@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components';
 
 class StartedProjectsComp extends Component {
 
@@ -58,6 +59,12 @@ getAllStartedProjects=()=>{
 
 
     render() {
+        const Button =  styled.button`
+        background: red;
+        `;
+
+        
+    
         return (
             <div>
                 <h1>Started Projects</h1>
@@ -103,7 +110,7 @@ getAllStartedProjects=()=>{
                             value={this.state.newStartedProject.info}
                         />
                     </div>
-                    <button>Add a previously started project</button>
+                    <Button>Add a previously started project</Button>
                 </form>
             </div>
         )
