@@ -21,6 +21,12 @@ class StartedProjComp extends Component {
         axios.delete(`/api/startedProjects/${this.props.match.params.projId}`).then(<Redirect to="/api/startedProjects" />)
     }
 
+    handleChange = (e) => {
+        const cloneStartedProject = {...this.state.startedProject}
+        cloneStartedProject[e.target.name] = e.target.value
+        this.setState({startedProject: cloneStartedProject}) 
+    }
+
     updateStartedProject = () => {
         axios.put(`/api/startedProjects/${this.props.match.params.projId}`, {
             name: this.state.startedProject.name,
