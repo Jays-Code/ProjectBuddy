@@ -11,7 +11,8 @@ class ProjToStartComp extends Component {
             name: '',
             priority: '',
             info: ''
-        }
+        },
+        redirect: false
     }
 
     componentDidMount = () => {
@@ -21,12 +22,16 @@ class ProjToStartComp extends Component {
     }
 
     deleteProject = () => {
-        axios.delete(`/api/projectsToStart/${this.props.match.params.projId}`).then(<Redirect to="/api/projectsToStart" />)
+        axios.delete(`/api/projectsToStart/${this.props.match.params.projId}`).then(() => this.setState({ redirect: true }));
+      
 
     }
 
     render() {
         //console.log(this.state.projectToStart)
+        if (this.state.redirect) {
+            return <Redirect to='/projectsToStart'/>;
+        }
         return (
             <div>
                 <h1>{this.state.projectToStart.name}</h1>
