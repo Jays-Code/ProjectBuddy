@@ -74,7 +74,7 @@ getAllProjectsToStart=()=>{
                         )
                     })
                 }
-                <StyledLink to="/">Go Back to Home</StyledLink>
+                <br></br>
                 <form onSubmit={this.createProjectToStart}>
                     <div>
                         <label htmlFor="name">Name</label>

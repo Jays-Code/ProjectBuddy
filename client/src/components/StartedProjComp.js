@@ -20,6 +20,7 @@ class StartedProjComp extends Component {
     componentDidMount = () => {
         axios.get(`/api/startedProjects/${this.props.match.params.projId}`).then(res => {
             this.setState({ startedProject: res.data })
+            console.log("hello")
         })
     }
 
@@ -35,13 +36,14 @@ class StartedProjComp extends Component {
         this.setState({ startedProject: cloneStartedProject })
     }
 
-    updateStartedProject = () => {
+    updateStartedProject = (e) => {
+        e.preventDefault()
         axios.put(`/api/startedProjects/${this.props.match.params.projId}`, {
             name: this.state.startedProject.name,
             rank: this.state.startedProject.rank,
             info: this.state.startedProject.info
         }).then(res => {
-            this.setState({ startedProject: res.data, redirect:true })
+            this.setState({ startedProject: res.data }).then(() => this.setState({ redirect: true}))
         })
 
     }
@@ -85,7 +87,7 @@ class StartedProjComp extends Component {
                         <div>
                             <label htmlFor="info">Info</label>
                             <textarea
-                                id="dinfo"
+                                id="info"
                                 name="info"
                                 onChange={this.handleChange}
                                 value={this.state.startedProject.info}
