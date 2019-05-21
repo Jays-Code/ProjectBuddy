@@ -26,6 +26,7 @@ class StartedProjComp extends Component {
     deleteProject = () => {
         axios.delete(`/api/startedProjects/${this.props.match.params.projId}`)
         .then(() => this.setState({ redirect: true }));
+        
     }
 
     handleChange = (e) => {
@@ -40,7 +41,7 @@ class StartedProjComp extends Component {
             rank: this.state.startedProject.rank,
             info: this.state.startedProject.info
         }).then(res => {
-            this.setState({ startedProject: res.data })
+            this.setState({ startedProject: res.data, redirect:true })
         })
 
     }

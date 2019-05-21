@@ -36,6 +36,7 @@ class StartedProjectsComp extends Component {
 
     createStartedProject = (e) => {
         e.preventDefault()
+        console.log("hello world")
         axios.post('/api/startedProjects', {
             name: this.state.newStartedProject.name,
             rank: this.state.newStartedProject.rank,
@@ -132,7 +133,7 @@ getAllStartedProjects = () => {
                     })
                 }
                 <br></br>
-                <StyledButton>Add a previously started project</StyledButton>
+                
                 <form onSubmit={this.createStartedProject}>
                     <div>
                         <label htmlFor="name">Name</label>
@@ -164,7 +165,7 @@ getAllStartedProjects = () => {
                             value={this.state.newStartedProject.info}
                         />
                     </div>
-
+                    <StyledButton>Add a previously started project</StyledButton>
                 </form>
             </div>
         )
