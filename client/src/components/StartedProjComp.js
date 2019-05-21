@@ -42,9 +42,10 @@ class StartedProjComp extends Component {
             name: this.state.startedProject.name,
             rank: this.state.startedProject.rank,
             info: this.state.startedProject.info
-        }).then(res => {
-            this.setState({ startedProject: res.data }).then(() => this.setState({ redirect: true}))
         })
+        // .then(res => {
+        //     this.setState({ startedProject: res.data })
+            .then(() => this.setState({ redirect: true}))
 
     }
 
