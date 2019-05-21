@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
+import { StyledButton } from '../Style'
 
 
 class StartedProjComp extends Component {
@@ -11,7 +12,7 @@ class StartedProjComp extends Component {
             rank: '',
             info: ''
         },
-        //redirect: false
+        redirect: false
     }
 
 
@@ -24,7 +25,7 @@ class StartedProjComp extends Component {
 
     deleteProject = () => {
         axios.delete(`/api/startedProjects/${this.props.match.params.projId}`)
-        //.then(() => this.setState({ redirect: true }));
+        .then(() => this.setState({ redirect: true }));
     }
 
     handleChange = (e) => {
@@ -45,18 +46,18 @@ class StartedProjComp extends Component {
     }
 
     render() {
-        /*
+        
                 if (this.state.redirect) {
-                    return <Redirect to='/api/startedProjects'/>;
+                    return <Redirect to='/startedProjects'/>;
                 }
-                */
+                
         return (
             <div>
                 <h1>{this.state.startedProject.name}</h1>
                 <h1>{this.state.startedProject.rank}</h1>
                 <h1>{this.state.startedProject.info}</h1>
                 <div>
-                    <button onClick={this.deleteProject}>Delete this project</button>
+                    <StyledButton onClick={this.deleteProject}>Delete this project</StyledButton>
                 </div>
                 <div>
                     <form onSubmit={this.updateStartedProject}>
@@ -89,7 +90,7 @@ class StartedProjComp extends Component {
                                 value={this.state.startedProject.info}
                             />
                         </div>
-                        <button>Update</button>
+                        <StyledButton>Update</StyledButton>
                     </form>
                 </div>
             </div>

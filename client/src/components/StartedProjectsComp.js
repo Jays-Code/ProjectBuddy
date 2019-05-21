@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
-import Axios from 'axios';
-import StylePage from '../Style'
+//import Axios from 'axios';
+import { StyledLink } from '../Style.js'
+import { StyledButton } from '../Style'
 
 class StartedProjectsComp extends Component {
 
 
-    
+
     state = {
         startedProjects: [],
 
@@ -76,34 +77,34 @@ class StartedProjectsComp extends Component {
             <div onclick={changeit(4) }> IMAGE OF STAR</div>
             <div onclick={changeit(5) }> IMAGE OF STAR</div>
     */
-   /*
-    changeIt = (number) => {
+    /*
+     changeIt = (number) => {
+ 
+         let copy = this.state.startedProjects.stars
+         copy = number
+         this.setState({ stars: copy })
+ 
+         axios.post('/api/startedProjects', this.state.startedProjects)
+        */
+    /*
+        <div >
+        <div onclick={changeit(1)} > IMAGE OF STAR</div >
+        <div onclick={changeit(2)}> IMAGE OF STAR</div>
+        <div onclick={changeit(3)}> IMAGE OF STAR</div>
+        <div onclick={changeit(4)}> IMAGE OF STAR</div>
+        <div onclick={changeit(5)}> IMAGE OF STAR</div>
+            </div >
+            */
 
-        let copy = this.state.startedProjects.stars
-        copy = number
-        this.setState({ stars: copy })
+      
+/*
+getAllStartedProjects = () => {
+   axios.get('api/startedProjects').then(res => {
+       this.setState({ startedProjects: res.data })
+   })
+}*/
 
-        axios.post('/api/startedProjects', this.state.startedProjects)
-       */
-            /*
-                <div >
-                <div onclick={changeit(1)} > IMAGE OF STAR</div >
-                <div onclick={changeit(2)}> IMAGE OF STAR</div>
-                <div onclick={changeit(3)}> IMAGE OF STAR</div>
-                <div onclick={changeit(4)}> IMAGE OF STAR</div>
-                <div onclick={changeit(5)}> IMAGE OF STAR</div>
-                    </div >
-                    */
-                    
-             /*   
-        }
-        getAllStartedProjects = () => {
-            axios.get('api/startedProjects').then(res => {
-                this.setState({ startedProjects: res.data })
-            })
-    }
 
-*/
 
 
     render() {
@@ -114,14 +115,7 @@ class StartedProjectsComp extends Component {
         margin: 1vh
         `;
         */
-       const Button = styled.button`
-  background: transparent;
-  border-radius: 10px;
-  border: 2px outset #4CAF50;
-  color: #4CAF50;
-  margin: 2em 1em;
-  padding: 0.25em 1em;
-`
+ 
 
 
         return (
@@ -132,13 +126,13 @@ class StartedProjectsComp extends Component {
                     this.state.startedProjects.map(startedProject => {
                         return (
                             <div key={startedProject._id}>
-                                <Link to={`/startedProjects/${startedProject._id}`}>{startedProject.name}</Link>
+                                <StyledLink to={`/startedProjects/${startedProject._id}`}>{startedProject.name}</StyledLink>
                             </div>
                         )
                     })
                 }
-              <br></br>
-              <Button>Add a previously started project</Button>
+                <br></br>
+                <StyledButton>Add a previously started project</StyledButton>
                 <form onSubmit={this.createStartedProject}>
                     <div>
                         <label htmlFor="name">Name</label>
@@ -170,7 +164,7 @@ class StartedProjectsComp extends Component {
                             value={this.state.newStartedProject.info}
                         />
                     </div>
-                    
+
                 </form>
             </div>
         )

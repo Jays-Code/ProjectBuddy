@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
+import { StyledLink } from '../Style.js'
+import { StyledButton } from '../Style'
 
 class ProjToStartComp extends Component {
     
@@ -67,12 +69,12 @@ getAllProjectsToStart=()=>{
                     this.state.projectsToStart.map(projectToStart => {
                         return (
                             <div key={projectToStart._id}>
-                                <Link to={`/projectsToStart/${projectToStart._id}`}>{projectToStart.name}</Link>
+                                <StyledLink to={`/projectsToStart/${projectToStart._id}`}>{projectToStart.name}</StyledLink>
                             </div>
                         )
                     })
                 }
-                <Link to="/">Go Back to Home</Link>
+                <StyledLink to="/">Go Back to Home</StyledLink>
                 <form onSubmit={this.createProjectToStart}>
                     <div>
                         <label htmlFor="name">Name</label>
@@ -104,7 +106,7 @@ getAllProjectsToStart=()=>{
                             value={this.state.newProjectToStart.info}
                         />
                     </div>
-                    <button>Add a new project to start</button>
+                    <StyledButton>Add a new project to start</StyledButton>
                 </form>
             </div>
         )

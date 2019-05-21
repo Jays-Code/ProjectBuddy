@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
+import { StyledLink } from '../Style.js'
+import { StyledButton } from '../Style'
 
 class ProjToStartComp extends Component {
     state = {
@@ -31,7 +33,7 @@ class ProjToStartComp extends Component {
                 <h1>{this.state.projectToStart.priority}</h1>
                 <h1>{this.state.projectToStart.info}</h1>
                 <div>
-                    <button onClick={this.deleteProject}>Delete this project</button>
+                    <StyledButton onClick={this.deleteProject}>Delete this project</StyledButton>
                 </div>
             </div>
         )
