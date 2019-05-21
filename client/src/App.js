@@ -15,14 +15,16 @@ import About from './components/About'
 //navbar would go above className div, below router
 class App extends Component {
   render() {
-    //const App = styled.App`
-    //color:red;
-    //`
+    const StyledApp = styled.div`
+    background:palevioletred;
+    text-align: center;
+    border: solid black;
+    `
     
     return (
       <Router>
         <Navbar></Navbar>
-        <div className='App'>
+        <StyledApp>
           <Switch>
             <Route exact path='/' component={Homepage} />
             <Route exact path='/startedProjects' component={StartedProjectsComp} />
@@ -31,7 +33,7 @@ class App extends Component {
             <Route exact path='/projectsToStart/:projId' component={ProjToStartComp} />
             <Route exact path='/about' component={About} />
           </Switch>
-        </div>
+        </StyledApp>
       </Router>
     );
   }

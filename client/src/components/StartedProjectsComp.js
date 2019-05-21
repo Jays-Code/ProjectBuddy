@@ -136,7 +136,7 @@ getAllStartedProjects = () => {
                 
                 <form onSubmit={this.createStartedProject}>
                     <div>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">Name: </label>
                         <input
                             id="name"
                             type="text"
@@ -145,8 +145,9 @@ getAllStartedProjects = () => {
                             value={this.state.newStartedProject.name}
                         />
                     </div>
+                    <br></br>
                     <div>
-                        <label htmlFor="rank">Rank</label>
+                        <label htmlFor="rank">Rank: </label>
                         <textarea
                             id="rank"
                             type="number"
@@ -155,8 +156,9 @@ getAllStartedProjects = () => {
                             value={this.state.newStartedProject.rank}
                         />
                     </div>
+                    <br></br>
                     <div>
-                        <label htmlFor="rank">Info</label>
+                        <label htmlFor="rank">Info: </label>
                         <textarea
                             id="info"
                             type="text"

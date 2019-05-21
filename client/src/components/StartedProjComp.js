@@ -66,7 +66,7 @@ class StartedProjComp extends Component {
                 <div>
                     <form onSubmit={this.updateStartedProject}>
                         <div>
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">Name: </label>
                             <input
                                 id="name"
                                 type="text"
@@ -75,8 +75,9 @@ class StartedProjComp extends Component {
                                 value={this.state.startedProject.name}
                             />
                         </div>
+                        <br></br>
                         <div>
-                            <label htmlFor="rank">Rank</label>
+                            <label htmlFor="rank">Rank: </label>
                             <input
                                 id="rank"
                                 type="text"
@@ -85,8 +86,9 @@ class StartedProjComp extends Component {
                                 value={this.state.startedProject.rank}
                             />
                         </div>
+                        <br></br>
                         <div>
-                            <label htmlFor="info">Info</label>
+                            <label htmlFor="info">Info: </label>
                             <textarea
                                 id="info"
                                 name="info"

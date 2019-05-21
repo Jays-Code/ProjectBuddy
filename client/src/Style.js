@@ -7,10 +7,10 @@ text-decoration:none;
 `
 
 export const StyledButton = styled.button`
-background: transparent;
+background: white;
 border-radius: 10px;
 border: 2px outset #4CAF50;
-color: #4CAF50;
+color: purple;
 margin: 2em 1em;
 padding: 0.25em 1em;
 `

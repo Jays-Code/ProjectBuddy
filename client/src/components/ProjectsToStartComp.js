@@ -77,7 +77,7 @@ getAllProjectsToStart=()=>{
                 <br></br>
                 <form onSubmit={this.createProjectToStart}>
                     <div>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">Name: </label>
                         <input
                             id="name"
                             type="text"
@@ -86,8 +86,9 @@ getAllProjectsToStart=()=>{
                             value={this.state.newProjectToStart.name}
                         />
                     </div>
+                    <br></br>
                     <div>
-                        <label htmlFor="priority">Priority</label>
+                        <label htmlFor="priority">Priority: </label>
                         <textarea
                             id="priority"
                             type="number"
@@ -96,8 +97,9 @@ getAllProjectsToStart=()=>{
                             value={this.state.newProjectToStart.priority}
                         />
                     </div>
+                    <br></br>
                     <div>
-                        <label htmlFor="info">Info</label>
+                        <label htmlFor="info">Info: </label>
                         <textarea
                             id="info"
                             type="text"

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
+import styled from 'styled-components';
 
 class Homepage extends Component {
     /*
@@ -14,11 +15,35 @@ class Homepage extends Component {
     */
 
     render() {
+
+        const StyledDiv1 =  styled.div`
+        justify-content: center;
+        padding:190px;
+        float: left;
+        text-decoration: none;
+        font-size: 5vh;
+        background: orange;
+        border: solid black;
+        ;
+        `
+
+        const StyledDiv2 = styled.div`
+        justify-content: center;
+        padding: 190px;
+        float: right;
+        text-decoration: none;
+        font-size: 5vh;
+        background: orange;
+        border: solid black;
+        `
+
+        
+
         return (
             <div>
                 <h1>Welcome to ProjectBuddy!</h1>
-                <div><Link to="/startedProjects">Started Projects</Link></div>
-                <span><Link to="/projectsToStart">Projects To Start</Link></span>
+                <StyledDiv1><Link to="/startedProjects">Started Projects</Link></StyledDiv1>
+                <StyledDiv2><Link to="/projectsToStart">Projects To Start</Link></StyledDiv2>
             </div>
                 )
             }
