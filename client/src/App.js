@@ -15,6 +15,10 @@ import About from './components/About'
 //navbar would go above className div, below router
 class App extends Component {
   render() {
+    //const App = styled.App`
+    //color:red;
+    //`
+    
     return (
       <Router>
         <Navbar></Navbar>

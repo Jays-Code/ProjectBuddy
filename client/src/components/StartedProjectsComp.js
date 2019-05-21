@@ -60,7 +60,9 @@ getAllStartedProjects=()=>{
 
     render() {
         const Button =  styled.button`
-        background: red;
+        background: #4CAF50;
+        border-radius: 100%
+        margin: 1vh
         `;
 
         
