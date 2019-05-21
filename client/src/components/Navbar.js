@@ -6,23 +6,25 @@ class Navbar extends Component {
   render() {
 
     const StyledDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  
     color: white;
     font-weight: bolder;
     background: #004C99;
     padding: 1vw;
     margin: 
+    text-align: left;
+    
     `
+    
     const StyledLink = styled(Link)`
     float: right;
+    text-align: right;
     `
 
    
 
     return (
-      <StyledDiv className="navbar">
+      <StyledDiv>
           <Link to = "/">Home</Link>
           <StyledLink to = "/About">About</StyledLink>
       </StyledDiv>

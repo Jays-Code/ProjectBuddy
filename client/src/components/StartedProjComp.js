@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
- 
+
 
 class StartedProjComp extends Component {
     state = {
@@ -10,8 +10,11 @@ class StartedProjComp extends Component {
             name: '',
             rank: '',
             info: ''
-        }
+        },
+        //redirect: false
     }
+
+
 
     componentDidMount = () => {
         axios.get(`/api/startedProjects/${this.props.match.params.projId}`).then(res => {
@@ -20,13 +23,14 @@ class StartedProjComp extends Component {
     }
 
     deleteProject = () => {
-        axios.delete(`/api/startedProjects/${this.props.match.params.projId}`).then(<Redirect to="/api/startedProjects" />)
+        axios.delete(`/api/startedProjects/${this.props.match.params.projId}`)
+        //.then(() => this.setState({ redirect: true }));
     }
 
     handleChange = (e) => {
-        const cloneStartedProject = {...this.state.startedProject}
+        const cloneStartedProject = { ...this.state.startedProject }
         cloneStartedProject[e.target.name] = e.target.value
-        this.setState({startedProject: cloneStartedProject}) 
+        this.setState({ startedProject: cloneStartedProject })
     }
 
     updateStartedProject = () => {
@@ -41,6 +45,11 @@ class StartedProjComp extends Component {
     }
 
     render() {
+        /*
+                if (this.state.redirect) {
+                    return <Redirect to='/api/startedProjects'/>;
+                }
+                */
         return (
             <div>
                 <h1>{this.state.startedProject.name}</h1>
