@@ -5,6 +5,7 @@ import styled from 'styled-components';
 //import Axios from 'axios';
 import { StyledLink } from '../Style.js'
 import { StyledButton } from '../Style'
+import { StyledLabel } from '../Style'
 
 class StartedProjectsComp extends Component {
 
@@ -136,7 +137,7 @@ getAllStartedProjects = () => {
                 
                 <form onSubmit={this.createStartedProject}>
                     <div>
-                        <label htmlFor="name">Name: </label>
+                        <StyledLabel htmlFor="name">Name: </StyledLabel>
                         <input
                             id="name"
                             type="text"
@@ -147,7 +148,7 @@ getAllStartedProjects = () => {
                     </div>
                     <br></br>
                     <div>
-                        <label htmlFor="rank">Rank: </label>
+                        <StyledLabel htmlFor="rank">Rank: </StyledLabel>
                         <textarea
                             id="rank"
                             type="number"
@@ -158,7 +159,7 @@ getAllStartedProjects = () => {
                     </div>
                     <br></br>
                     <div>
-                        <label htmlFor="rank">Info: </label>
+                        <StyledLabel htmlFor="rank">Info: </StyledLabel>
                         <textarea
                             id="info"
                             type="text"

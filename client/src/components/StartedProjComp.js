@@ -3,6 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components';
 import { StyledButton } from '../Style'
+import { StyledLabel } from '../Style'
 
 
 class StartedProjComp extends Component {
@@ -66,7 +67,7 @@ class StartedProjComp extends Component {
                 <div>
                     <form onSubmit={this.updateStartedProject}>
                         <div>
-                            <label htmlFor="name">Name: </label>
+                            <StyledLabel htmlFor="name">Name: </StyledLabel>
                             <input
                                 id="name"
                                 type="text"
@@ -77,7 +78,7 @@ class StartedProjComp extends Component {
                         </div>
                         <br></br>
                         <div>
-                            <label htmlFor="rank">Rank: </label>
+                            <StyledLabel htmlFor="rank">Rank: </StyledLabel>
                             <input
                                 id="rank"
                                 type="text"
@@ -88,7 +89,7 @@ class StartedProjComp extends Component {
                         </div>
                         <br></br>
                         <div>
-                            <label htmlFor="info">Info: </label>
+                            <StyledLabel htmlFor="info">Info: </StyledLabel>
                             <textarea
                                 id="info"
                                 name="info"

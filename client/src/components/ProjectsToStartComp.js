@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from 'styled-components';
 import { StyledLink } from '../Style.js'
 import { StyledButton } from '../Style'
+import { StyledLabel } from '../Style'
 
 class ProjToStartComp extends Component {
     
@@ -77,7 +78,7 @@ getAllProjectsToStart=()=>{
                 <br></br>
                 <form onSubmit={this.createProjectToStart}>
                     <div>
-                        <label htmlFor="name">Name: </label>
+                        <StyledLabel htmlFor="name">Name: </StyledLabel>
                         <input
                             id="name"
                             type="text"
@@ -88,7 +89,7 @@ getAllProjectsToStart=()=>{
                     </div>
                     <br></br>
                     <div>
-                        <label htmlFor="priority">Priority: </label>
+                        <StyledLabel htmlFor="priority">Priority: </StyledLabel>
                         <textarea
                             id="priority"
                             type="number"
@@ -99,7 +100,7 @@ getAllProjectsToStart=()=>{
                     </div>
                     <br></br>
                     <div>
-                        <label htmlFor="info">Info: </label>
+                        <StyledLabel htmlFor="info">Info: </StyledLabel>
                         <textarea
                             id="info"
                             type="text"

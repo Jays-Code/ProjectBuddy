@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from 'styled-components';
 import { StyledLink } from '../Style.js'
 import { StyledButton } from '../Style'
+import { StyledLabel } from '../Style'
 
 class ProjToStartComp extends Component {
     state = {
